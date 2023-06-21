@@ -66,19 +66,31 @@ public class BestController {
         return "songs";
     }
 
-//    @GetMapping("/{id}")
-//    public String movieDetail(@PathVariable("id") String movieId, Model model) {
-//        model.addAttribute("movieDetail", service.getDetail(bookId));
-//
-//        return "/detail";
-//
-//    }
-//
-//    @GetMapping("/{id}")
-//    public String songDetail(@PathVariable("id") String songId, Model model) {
-//        model.addAttribute("songDetail", service.getDetail(bookId));
-//
-//        return "/detail";
-//
-//    }
+    @GetMapping("/{id}")
+    public String movieDetail(@PathVariable("id") Integer movieId, Model model) {
+        Movie currentMovie = null;
+        for (Movie movie : getBestMovies()){
+            if(movie.getId() == movieId){
+                currentMovie = movie;
+            }
+        }
+        model.addAttribute("movieDetail", currentMovie);
+
+        return "/detail";
+
+    }
+
+    @GetMapping("/{id}")
+    public String songDetail(@PathVariable("id") Integer songId, Model model) {
+        Song currentSong = null;
+        for (Song song : getBestSongs()){
+            if(song.getId() == songId){
+                currentSong = song;
+            }
+        }
+        model.addAttribute("movieDetail", currentSong);
+
+        return "/detail";
+
+    }
 }

@@ -17,7 +17,9 @@
 
         <div class="card mt-3" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-                <li th:each="song : ${songsList}" th:text="${song.getTitle()}" class="list-group-item"></li>
+                <li th:each="song : ${songsList}"  class="list-group-item">
+                    <a th:href="@{|/songs/${song.id}|}" th:text="${song.getTitle()}"> </a>
+                </li>
             </ul>
         </div>
     </div>
