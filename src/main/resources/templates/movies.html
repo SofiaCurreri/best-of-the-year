@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
+
+    <title>Best of Movies</title>
 </head>
 <body>
 
-    <h2> Best movies: </h2>
-    <p th:text="${moviesList}"></p>
+    <div class="container d-flex justify-content-center align-items-center flex-column mt-5">
+        <h2> Best movies </h2>
+
+        <div class="card mt-3" style="width: 18rem;">
+             <ul class="list-group list-group-flush">
+                <li th:each="movie : ${moviesList}" th:text="${movie.getTitle()}" class="list-group-item"></li>
+            </ul>
+        </div>
+    </div>
+
+
 
 </body>
 </html>

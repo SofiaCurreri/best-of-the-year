@@ -1,4 +1,4 @@
-package org.lessons.java.bestoftheyear;
+package org.lessons.java.bestoftheyear.model;
 
 public class Song {
     private int id;
