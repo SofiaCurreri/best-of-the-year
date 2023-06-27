@@ -12,15 +12,17 @@
 </head>
 <body>
 
-    <div class="container d-flex justify-content-center align-items-center flex-column mt-5">
-        <h2> Best movies </h2>
+    <div class="container position-relative" style="height:100vh;">
+        <div class="text-center position-absolute top-50 start-50 translate-middle">
+            <h1> Best movies </h1>
 
-        <div class="card mt-3" style="width: 18rem;">
-             <ul class="list-group list-group-flush">
-                <li th:each="movie : ${moviesList}"  class="list-group-item">
-                    <a th:href="@{|/movies/${movie.id}|}" th:text="${movie.getTitle()}"> </a>
-                </li>
-            </ul>
+            <div class="card mt-5" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li th:each="movie : ${moviesList}"  class="list-group-item">
+                        <a th:href="@{|/movies/${movie.id}|}" th:text="${movie.getTitle()}"> </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 

@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/") //a quale rotta rispondono i metodi di questo controller
 public class BestController {
 
-    @GetMapping("/template")
+    @GetMapping
     public String template(Model model){
         String name = "Sofia";
         model.addAttribute("name", name);
@@ -27,6 +27,8 @@ public class BestController {
         movies.add(new Movie(1, "Labyrinth"));
         movies.add(new Movie(2, "Aladdin"));
         movies.add(new Movie(3, "Paprika"));
+        movies.add(new Movie(4, "Coraline"));
+        movies.add(new Movie(5, "Odio l' estate"));
         return movies;
     }
 
@@ -35,6 +37,8 @@ public class BestController {
         songs.add(new Song(1, "Pedro"));
         songs.add(new Song(2, "Crave you"));
         songs.add(new Song(3, "Can I call you tonight?"));
+        songs.add(new Song(4, "The Shade"));
+        songs.add(new Song(5, "Sanctuary"));
         return songs;
     }
 
@@ -66,7 +70,7 @@ public class BestController {
         return "songs";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("movies/{id}")
     public String movieDetail(@PathVariable("id") Integer movieId, Model model) {
         Movie currentMovie = null;
         for (Movie movie : getBestMovies()){
@@ -76,11 +80,11 @@ public class BestController {
         }
         model.addAttribute("movieDetail", currentMovie);
 
-        return "/detail";
+        return "detailMovie";
 
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("songs/{id}")
     public String songDetail(@PathVariable("id") Integer songId, Model model) {
         Song currentSong = null;
         for (Song song : getBestSongs()){
@@ -88,9 +92,9 @@ public class BestController {
                 currentSong = song;
             }
         }
-        model.addAttribute("movieDetail", currentSong);
+        model.addAttribute("songDetail", currentSong);
 
-        return "/detail";
+        return "detailSong";
 
     }
 }

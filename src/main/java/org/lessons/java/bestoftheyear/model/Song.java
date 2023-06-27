@@ -3,10 +3,20 @@ package org.lessons.java.bestoftheyear.model;
 public class Song {
     private int id;
     private String title;
+    private String image;
 
-    public Song(int id, String title) {
+    public Song(int id, String title, String image) {
         this.id = id;
         this.title = title;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public int getId() {

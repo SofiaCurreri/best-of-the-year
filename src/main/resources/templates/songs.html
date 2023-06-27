@@ -12,10 +12,11 @@
 </head>
 <body>
 
-    <div class="container d-flex justify-content-center align-items-center flex-column mt-5">
-        <h2> Best songs </h2>
+<div class="container position-relative" style="height:100vh;">
+    <div class="text-center position-absolute top-50 start-50 translate-middle">
+        <h1> Best songs </h1>
 
-        <div class="card mt-3" style="width: 18rem;">
+        <div class="card mt-5" style="width: 18rem;">
             <ul class="list-group list-group-flush">
                 <li th:each="song : ${songsList}"  class="list-group-item">
                     <a th:href="@{|/songs/${song.id}|}" th:text="${song.getTitle()}"> </a>
@@ -23,6 +24,7 @@
             </ul>
         </div>
     </div>
+</div>
 
 
 
