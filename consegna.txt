@@ -1,5 +1,3 @@
-Le modalità di consegna sono le solite, con repo github da associare alla cartella di progetto java.
-Cosa fare?
 Step 1 Creare un nuovo progetto Spring Boot MVC + Thymeleaf  utilizzando lo Spring Initializr online e importarlo in IntelliJ.
 Il nome del progetto è best-of-the-year (stesso nome del repo).
 Nel progetto aggiungere un controller che risponde alla root dell’applicazione, con un metodo che restituisce una view fatta
