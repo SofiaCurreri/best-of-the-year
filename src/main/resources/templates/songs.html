@@ -4,19 +4,15 @@
     <th:block th:replace="~{fragments :: head(title='Best Songs')}"></th:block>
 </head>
 
-<body>
+<body class="position-relative" style="height:100vh;">
 <th:block th:replace="~{fragments :: navbar}"></th:block>
 
-<div class="container position-relative" style="height:100vh;">
+<div class="container" >
     <div class="text-center position-absolute top-50 start-50 translate-middle">
         <h1> Best Songs </h1>
 
-        <div class="card mt-5" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-                <li th:each="song : ${songsList}"  class="list-group-item">
-                    <a th:href="@{|/songs/${song.id}|}" th:text="${song.getTitle()}"> </a>
-                </li>
-            </ul>
+        <div class="list-group mt-4" style="width: 18rem;">
+            <a class="list-group-item list-group-item-action" th:each="song : ${songsList}" th:href="@{|/songs/${song.id}|}" th:text="${song.getTitle()}"></a>
         </div>
     </div>
 </div>

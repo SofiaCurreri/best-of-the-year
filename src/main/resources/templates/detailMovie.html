@@ -12,9 +12,18 @@
 
   <title>Movie</title>
 </head>
-<body>
-<div th:object="${movieDetail}">
 
+<body class="position-relative" style="height:100vh;">
+<th:block th:replace="~{fragments :: navbar}"></th:block>
+
+<div class="container">
+  <div class="card text-center position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
+    <img th:src="${movieDetail.image}" class="card-img-top" alt="movie cover">
+    <div class="card-body">
+      <p class="card-text" th:text="${movieDetail.title}"></p>
+    </div>
+  </div>
 </div>
+
 </body>
 </html>
